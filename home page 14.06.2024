@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="website1" content="This is the first practice html+css website">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login.js">
+   
+    
+    <title>IATT Website</title>
+    <style>
+    *{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+ 
+}
+.ban {
+  /*2024/05/21*/
+  animation:change 10s infinite ease-in-out;
+animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/*end*/
+.nav{
+  font-size: x-large;
+  
+width: 100%;
+  padding: 75px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #6C69A1; 
+  background-color: #EBAE87;
+  height: 1%;
+  padding-bottom: 3%;
+  -webkit-box-shadow: 10px 10px 96px 6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 96px 6px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 96px 6px rgba(0,0,0,0.75);
+body{
+  overflow:hidden;
+}
+.left {
+    float: left;
+    height:350px;
+}
+.hidden {
+   
+    height:350px;
+}
+
+.left {
+    width: 50%;
+    background: #fff;
+    z-index:1;
+}
+
+.hidden {
+    width:50%;
+    z-index:2;
+    position:absolute;
+    background:rgb(0, 200, 255);
+    color:#000;
+}
+
+.right {
+    width:50%;
+    right:0;
+    position:absolute;
+    height:350px;
+    background:#000;
+    color:#fff;
+}
+
+.clear {
+    clear:both;
+}
+
+position: fixed;
+
+z-index: 2000;
+border-bottom-right-radius: 30px 30px;
+border-bottom-left-radius: 30px 30px;
+}
+
+.img {
+  width: auto;
+  height: 80px;
+}
+
+.nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+  font-size: medium;
+}
+.nav ul li a {
+  text-decoration: none;
+  color:#1f166a;
+  text-transform: capitalize;
+}
+
+
+.nav ul li::after{
+  content: '';
+  height: 2px;
+  width: 0; /*100% */
+  background: #2d13a0;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+  
+}
+
+
+.nav ul li:hover::after {
+  width: 100%;
+}
+
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 90%;
+ margin-top: 10PX;
+  transform: translateY(-50%);
+text-align: right;
+}
+
+
+
+button:hover span {
+  width: 100%;
+}
+button:hover {
+  border: none;
+}
+/*21/05*/
+.aa {
+  position: absolute;
+  right: -20px;
+  max-width: 300px;
+  height: 17%;
+  top:40px;
+/* margin-top: 5%;  */
+}
+form {
+          display: flex;
+          flex-direction: column;
+          width: 150px;
+          color: whitesmoke;
+      }
+input {
+          border: 1px solid #fffcfc;
+          margin-bottom: 2px;
+          padding: 5px;
+          border-radius: 13px;
+          border: 1px solid #0f080e;
+      }
+button {
+          padding: 5px;
+          border: none;
+          background-color: #181717;
+          color: rgba(255, 255, 255, 0.961);
+          border-radius: 15px;
+          width: 150px;
+          padding:center;
+          }
+                .aa{
+          margin-top: 130px;
+          margin-bottom: 100px;
+          margin-left: 40px;
+          margin-right: 40px;
+          background-color:  #5c5d8e;
+          padding-left: 90px;
+          padding-top: 100px;
+          padding-bottom: 180px;
+          padding-right: 100px;
+          border-radius: 40px;
+      }
+
+      .nav li a:hover {
+  background: #05c7ee;
+color: rgb(255, 255, 255);
+padding: 9px;
+border-radius: 10px;
+
+
+    }
+    .box{
+      background-color: #ffffff;
+      margin-left: 10%; 
+padding-top: 1%;
+padding-right: 0%;
+margin-bottom: 2%;
+      border-radius: 50px;
+    }
+    .slider_container {
+position: relative;
+width: 60%;
+min-width: 50rem;
+height: 40rem;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+overflow: hidden;
+
+}
+
+.slider {
+  
+  position: relative;
+  width: 200%;
+  height: 60%;
+  padding-top: 10%;
+  margin-bottom:1%;
+  margin-bottom:3%;
+  display:flex;
+  align-items:center;
+  animation:30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+  }
+.slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  }
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  }
+.slide.one {
+background: rgb(182, 19, 109);
+/*border-radius:110%;*/
+}
+.slide.two {
+background: rgb(255, 64, 64);
+}
+.slide.three {
+background: rgb(11, 173, 188);
+}
+.slide.four {
+background: rgb(11, 188, 14);
+}
+.slide.five {
+background: rgb(173, 11, 188);
+}
+
+@keyframes sliding {
+0% {
+  transform: translateX(0%);
+}
+20% {
+  transform: translateX(0%);
+}
+25% {
+  transform: translateX(-100%);
+}
+45% {
+  transform: translateX(-100%);
+}
+50% {
+  transform: translateX(-200%);
+}
+70% {
+  transform: translateX(-200%);
+}
+75% {
+  transform: translateX(-300%);
+}
+95% {
+  transform: translateX(-300%);
+}
+100% {
+  transform: translateX(-400%);
+}
+}
+      
+    </style>
+</head>
+<body>
+  
+    <div class="ban">
+        <div class="nav">
+            <a href="#"><img src="https://i.postimg.cc/Wh81f9t8/logoiat-removebg-preview.png" style="padding-left: 82%;padding-bottom: 28%;" loading="lazy"  width="80px" height="80px"  ></a>
+            <h1 style="padding-bottom: 2%;padding-right: 12%; font-size: 100%;text-shadow:
+            1px 1px 2px black,
+            0 0 1em rgb(2, 2, 54),
+            0 0 0.2em blue;">Ibhan Agile Talent Technilogies Pvt.Ltd. </h1> <br>        
+            <ul style="padding-bottom: 2%;padding-right: 0%;font-size: 40%;text-shadow:
+            1px 1px 2px black,
+            0 0 1em rgb(2, 2, 54),
+            0 0 0.2em blue;">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Course</a></li>
+                <li><a href="#"> Contact Us</a></li>
+            </ul>
+        </div>
+
+
+        <div class="box">
+          <section class="slider_container">
+            <section class="slider">
+              <div class="slide one">
+                <img src="imag3.jpg" alt="">
+        
+                
+              </div>
+              <div class="slide two">
+                <img src="image 1.jpg" alt="">
+               
+              </div>
+              <div class="slide three">
+                <img src="imag 5.jpg" alt="">
+               
+              </div>
+              <div class="slide four">
+                <img src="image99999.jpg" alt="">
+               
+              </div>
+              <div class="slide four">
+                <img src="imag 4.jpeg" alt="">
+               
+              </div>
+            </section>
+          </section>
+        </div>
+        
+    </div>
+     <div class="a">
+        <div class="aa">
+    <form id="loginForm">
+        <center><h2>Log In</h2></center>
+        <br>
+        <br>
+        <input type="text" id="username" placeholder="Username or Email" >
+        <br>
+        <input type="password" id="password" placeholder="Password">
+       <br>
+        <center><button class="btn-91">
+            <span>login</span>
+          </button></center>
+    </form></div>>
+ <script>document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  var users = {
+      'vignesh@12345.com': '1234@vignesh',
+      'annafausthinaamalathas@gmail.com': 'anna@2002',
+      'anne0444:gmail.com': 'anna@2002',
+      'perumaltheeviharajiny@gmail.com': 'theebi@11',
+    
+  };
+
+  if(users[username] === password) {
+      alert('Login successful!');
+      window.location.href = 'New Enrolment page.html'; // replace with your URL
+  } else {
+      alert('Invalid username or password.');
+  }
+});</script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Portal Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <style>
+        /* Importing Google font - Poppins */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url(Copy-of-BINUS-Apa-Itu-Strategi-Marketing-Communication-dan-Contoh-Penerapannya_\ -\ Copy.jpg);
+            display: flex;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 85px;
+            display: flex;
+            overflow-x: hidden;
+            flex-direction: column;
+            background: #161a2d;
+            padding: 25px 20px;
+            transition: all 0.4s ease;
+        }
+
+        .sidebar:hover {
+            width: 260px;
+        }
+
+        .sidebar .logo-container {
+            text-align: center;
+            padding: 15px 0;
+            display: flex;
+        }
+
+        .sidebar .sidebar-header img {
+            margin-top: auto;
+            padding: 28px 10px;
+            margin-left: -30px;
+        }
+
+        .sidebar .sidebar-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .sidebar-header .logo-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .sidebar .sidebar-header h1 {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 23px;
+        }
+
+        .sidebar:hover .sidebar-header .logo-container {
+            display: none;
+        }
+
+        .sidebar-links h3 {
+            color: #fff;
+            font-weight: 10OPX;
+            white-space: nowrap;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .sidebar-links h3 span {
+            opacity: 0;
+        }
+
+        .sidebar:hover .sidebar-links h3 span {
+            opacity: 1;
+        }
+
+        .sidebar-links .menu-separator {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            transform: scaleX(1);
+            transform: translateY(-50%);
+            background: #4f52ba;
+            transform-origin: right;
+            transition-delay: 0.2s;
+        }
+
+        .sidebar:hover .sidebar-links .menu-separator {
+            transition-delay: 0s;
+            transform: scaleX(0);
+        }
+
+        .sidebar-links {
+            list-style: none;
+            margin-top: 20px;
+            height: 80%;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        .sidebar-links::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sidebar-links li a {
+            display: flex;
+            align-items: center;
+            gap: 0 20px;
+            color: #fff;
+            font-weight: 500;
+            white-space: nowrap;
+            padding: 15px 10px;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .sidebar-links li a:hover {
+            color: #727792;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        .sidebar-header .hide.brand.text {
+            display: none;
+        }
+
+        .sidebar-header .hide .brand.logo {
+            display: block;
+            width: 100%;
+            height: 75%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0a0a0a;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .content h3 {
+            border-bottom: 2px solid #FD924E;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        form .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"], form input[type="date"], form input[type="email"], form textarea, form select {
+            padding: 8px;
+            border: 1px solid #d79797;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #022e5b;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 20%;
+            height: 40px;
+        }
+        
+
+        form button:hover {
+            background-color: #74afea;
+        }
+
+        .form-full-width {
+            grid-column: span 2;
+        }
+
+        .form-group.radio-group {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-header {
+            margin-left: 1px;
+        }
+
+        .new-enrolment h1 {
+            font-size: xx-large;
+        }
+
+        .sidebar .hide {
+            display: none;
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .radio-group div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 150px;
+        }
+
+        .radio-group label {
+            margin-left: 5px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(3, 3, 3, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #6f6969;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .modal-content button {
+            background-color: #0f5b02;
+            color: #fcfcfc;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #90ea74;
+        }
+
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img src="logoiat.jpg" alt="logo" />
+            </div>
+            <h1>IMS</h1>
+        </div>
+        <ul class="sidebar-links">
+            <h3><span>Main Menu</span></h3>
+            <li>
+                <div class="dropdown">
+                    <a href="file:///C:/Users/DBIT/Desktop/DASHBORAD/back.html">
+                        <span class="material-symbols-outlined">home</span>Home
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="file:///C:/Users/DBIT/Desktop/home%20page%20login/Untitled-1.html">
+                        <span class="material-symbols-outlined">edit_note</span>New Enrolment
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="file:///C:/Users/DBIT/Desktop/home%20page%20login/couse1.html">
+                        <span class="material-symbols-outlined">filter_alt</span>Filters
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Filters.html">
+                        <span class="material-symbols-outlined">ios_share</span>Update Details
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="material-symbols-outlined">delete</span>Delete Details
+                </a>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="#">
+                        <span class="material-symbols-outlined">more_horiz</span>More
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#">Class</a>
+                        <a href="#">Dashboard</a>
+                        <a href="#">Tasks</a>
+                        <a href="#">Capstone</a>
+                        <a href="#">Queries</a>
+                        <a href="#">Requirements</a>
+                        <a href="#">Portfolio – Submission</a>
+                        <a href="#">Applications</a>
+                        <a href="#">Interview Tasks</a>
+                        <a href="#">Mock interviews</a>
+                        <a href="#">Leave – applications</a>
+                        <a href="#">Certificate</a>
+                        <a href="#">Testimonial</a>
+                        <a href="#">Leaderboard</a>
+                        <a href="#">Placement</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </aside>
+    <div class="content">
+        <form id="enrolment-form">
+            <div class="form-group form-full-width">
+                <h3>Update Course Details</h3>
+            </div>
+            <div class="form-group">
+                <label for="batch-code">Batch Code:</label>
+                <input type="text" id="Batch Code" name="Batch Code" placeholder="Enter Batch Code" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="text" id="Course" name="Course" placeholder="Enter Course" required>
+            </div>
+            <div class="form-group">
+                <label for="syllabus">Syllabus:</label>
+                <input type="text" id="Syllabus" name="Syllabus" placeholder="Enter Syllabus" required>
+            </div>
+            <div class="form-group">
+                <label for="course-start-date">Course Start Date:</label>
+                <input type="date" id="course-start-date" name="course-start-date">
+
+            </div>
+            <div class="form-group">
+                <label for="course-completion-date">Course Tentative Completion Date:</label>
+                <input type="date" id="course-completion-date" name="course-completion-date">
+            </div>
+            <div class="form-group">
+                <label for="tutor-name">Tutor Name:</label>
+                <input type="text" id="Experience" name="Experience" placeholder="Enter Experience" required>
+            </div>
+            <div class="form-group">
+                <label for="tutor-id">Tutor ID:</label>
+                <input type="text" id="tutor-id" name="tutor-id">
+            </div>
+            <div class="form-group submit-group">
+                <button type="button" onclick="history.back()">Back<a href="file:///C:/Users/DBIT/Desktop/home%20page%20login/Qualification%20Details.html"></a></button><br>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h2>Success!</h2>
+            <p>Your form has been submitted successfully.</p>
+            <button onclick="redirectToPage()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("enrolment-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Show the modal
+            document.getElementById("successModal").style.display = "flex";
+        });
+
+        function redirectToPage() {
+            window.location.href = "file:///C:/Users/DBIT/Desktop/home%20page%20login/Untitled-1.html"; // Redirect to the specified page
+        }
+
+        // Hide the modal when clicking outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById("successModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

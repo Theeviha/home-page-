@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: #f1f1f1;
+            margin-right: 5px;
+            font-size: 16px;
+        }
+        .tabs button.active {
+            background-color: #ccc;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .filter-section {
+            margin-bottom: 20px;
+        }
+        .filter-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .filter-section input[type="radio"],
+        .filter-section input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .filter-section .options {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'General')">General</button>
+        <button class="tab-link" onclick="openTab(event, 'Courses')">Courses</button>
+        <button class="tab-link" onclick="openTab(event, 'StudentStatus')">Student Status</button>
+        <button class="tab-link" onclick="openTab(event, 'ProjectCompletion')">Project Completion</button>
+        <button class="tab-link" onclick="openTab(event, 'TaskCompletion')">Task Completion</button>
+        <button class="tab-link" onclick="openTab(event, 'Certified')">Certified Candidates</button>
+        <button class="tab-link" onclick="openTab(event, 'PlacementPrep')">Placement Prep</button>
+        <button class="tab-link" onclick="openTab(event, 'PlacedStudents')">Placed Students</button>
+        <button class="tab-link" onclick="openTab(event, 'CTC')">CTC</button>
+        <button class="tab-link" onclick="openTab(event, 'Interviews')">Interviews</button>
+    </div>
+
+    <form>
+            
+            <div class="filter-section">
+                <label for="batch-code">Batch Code</label>
+                <input type="text" id="batch-code" name="batch-code">
+            </div>
+        </div>
+
+        <div id="Courses" class="tab-content">
+            <div class="filter-section">
+                <label>Course</label>
+                <div class="options">
+                    <input type="checkbox" id="course1" name="course" value="course1">
+                    <label for="course1">Course 1</label><br>
+                    <input type="checkbox" id="course2" name="course" value="course2">
+                    <label for="course2">Course 2</label><br>
+                    <input type="checkbox" id="course3" name="course" value="course3">
+                    <label for="course3">Course 3</label>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div id="StudentStatus" class="tab-content">
+            <div class="filter-section">
+                <label>Student Status</label>
+                <div class="options">
+                    <input type="radio" id="status-active" name="student-status" value="active">
+                    <label for="status-active">Enrolled</label><br>
+                    <input type="radio" id="status-inactive" name="student-status" value="inactive">
+                    <label for="status-inactive">Enquiry</label>
+                    <input type="radio" id="status-inactive" name="student-status" value="inactive">
+                    <label for="status-inactive">Waiting List</label>
+                    <input type="radio" id="status-inactive" name="student-status" value="inactive">
+                    <label for="status-inactive">Attend Demo</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="ProjectCompletion" class="tab-content">
+            <div class="filter-section">
+                <label>Project Completion</label>
+                <div class="options">
+                    <input type="radio" id="project-completed" name="project-completion" value="completed">
+                    <label for="project-completed">Completed</label><br>
+                    <input type="radio" id="project-not-completed" name="project-completion" value="not-completed">
+                    <label for="project-not-completed">Not Completed</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="TaskCompletion" class="tab-content">
+            <div class="filter-section">
+                <label>Required Task Completion for Certificate</label>
+                <div class="options">
+                    <input type="radio" id="task-completed" name="task-completion" value="completed">
+                    <label for="task-completed">Completed</label><br>
+                    <input type="radio" id="task-not-completed" name="task-completion" value="not-completed">
+                    <label for="task-not-completed">Not Completed</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="Certified" class="tab-content">
+            <div class="filter-section">
+                <label>Certified Candidates</label>
+                <div class="options">
+                    <input type="radio" id="certified" name="certified" value="yes">
+                    <label for="certified">Yes</label><br>
+                    <input type="radio" id="not-certified" name="certified" value="no">
+                    <label for="not-certified">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="PlacementPrep" class="tab-content">
+            <div class="filter-section">
+                <label>Placement Preparation Candidates</label>
+                <div class="options">
+                    <input type="radio" id="placement-prep" name="placement-prep" value="yes">
+                    <label for="placement-prep">Yes</label><br>
+                    <input type="radio" id="not-placement-prep" name="placement-prep" value="no">
+                    <label for="not-placement-prep">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="PlacedStudents" class="tab-content">
+            <div class="filter-section">
+                <label>Placed Students</label>
+                <div class="options">
+                    <input type="radio" id="placed" name="placed-students" value="yes">
+                    <label for="placed">Yes</label><br>
+                    <input type="radio" id="not-placed" name="placed-students" value="no">
+                    <label for="not-placed">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="CTC" class="tab-content">
+            <div class="filter-section">
+                <label for="ctc">CTC</label>
+                <input type="text" id="ctc" name="ctc">
+            </div>
+        </div>
+
+        <div id="Interviews" class="tab-content">
+            <div class="filter-section">
+                <label for="num-interviews">Number of Interviews Attended</label>
+                <input type="text" id="num-interviews" name="num-interviews">
+            </div>
+        </div>
+
+        <button type="submit">Apply Filters</button>
+    </form>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
